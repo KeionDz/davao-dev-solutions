@@ -324,20 +324,32 @@ export default function TeamPortfolio() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-400"></div>
+              <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-400">
+                <img
+                  src="https://play-lh.googleusercontent.com/emWyma9S8bgKJgbKHzLHq-t1r6U6pqX5iAIquxebFAC-ydWOXX0iPgBkG8daDk6Gjko=w240-h480-rw"
+                  alt="ByaheDVO"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardHeader>
-                <CardTitle>---</CardTitle>
-                <CardDescription>---</CardDescription>
+                <CardTitle>ByaheDVO</CardTitle>
+                <CardDescription>A rule based chatbot for routes navigation within Davao City utilizing Dialogflow API and Google Maps </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline">React</Badge>
-                  <Badge variant="outline">Stripe</Badge>
-                  <Badge variant="outline">Node.js</Badge>
+                  <Badge variant="outline">Flutter</Badge>
+                  <Badge variant="outline">Firebase</Badge>
                 </div>
-                <Button variant="outline" size="sm">
-                  View Project <ArrowRight className="ml-2 h-3 w-3" />
-                </Button>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.byaheDVO_Navigation.byahe_dvo&pli=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" size="sm">
+                    View Project <ArrowRight className="ml-2 h-3 w-3" />
+                  </Button>
+                </a>
+
               </CardContent>
             </Card>
 
