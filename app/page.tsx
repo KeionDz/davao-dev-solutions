@@ -442,7 +442,7 @@ export default function TeamPortfolio() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-purple-600" />
-                  <span className="text-gray-600 dark:text-gray-300">hello@davaodevs.com</span>
+                  <span className="text-gray-600 dark:text-gray-300">davaodevs@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-purple-600" />
@@ -450,7 +450,7 @@ export default function TeamPortfolio() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-purple-600" />
-                  <span className="text-gray-600 dark:text-gray-300">San Francisco, CA</span>
+                  <span className="text-gray-600 dark:text-gray-300">Davao City, Davao del Sur, Philippines</span>
                 </div>
               </div>
 
