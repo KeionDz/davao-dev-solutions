@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+         <link rel="icon" href="/placeholder-logo.svg" />
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
