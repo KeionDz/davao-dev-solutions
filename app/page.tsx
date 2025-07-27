@@ -3,6 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -21,9 +22,12 @@ import {
   Lightbulb,
   Moon,
   Sun,
+  Menu,
+  X,
 } from "lucide-react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
+import { useState } from "react"
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()
@@ -43,13 +47,17 @@ function ThemeToggle() {
 }
 
 export default function TeamPortfolio() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b dark:border-gray-800">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">Davao Devs Solutions</div>
+            <div className="text-2xl font-bold text-gray-900 dark:text-white">Davao Devs Solution</div>
+
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <Link
                 href="#about"
@@ -83,7 +91,64 @@ export default function TeamPortfolio() {
               </Link>
               <ThemeToggle />
             </div>
+
+            {/* Mobile Navigation Button */}
+            <div className="md:hidden flex items-center space-x-2">
+              <ThemeToggle />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="h-9 w-9 px-0"
+              >
+                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </div>
           </div>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t dark:border-gray-800">
+              <div className="flex flex-col space-y-4 pt-4">
+                <Link
+                  href="#about"
+                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-2 py-1"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="#team"
+                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-2 py-1"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Team
+                </Link>
+                <Link
+                  href="#services"
+                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-2 py-1"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Services
+                </Link>
+                <Link
+                  href="#portfolio"
+                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-2 py-1"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Portfolio
+                </Link>
+                <Link
+                  href="#contact"
+                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors px-2 py-1"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -187,12 +252,12 @@ export default function TeamPortfolio() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  Full-stack developer with 100+ years of experience in c++, MSSQL, and cloud technologies.
+                  Full-stack developer with 100+ years of experience in React, Node.js, and cloud technologies.
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center mb-4">
                   <Badge variant="secondary">C++</Badge>
                   <Badge variant="secondary">MSSQL</Badge>
-                  <Badge variant="secondary">Miho</Badge>
+                  <Badge variant="secondary">Miho and pag ibig ko</Badge>
                 </div>
                 <div className="flex justify-center space-x-2">
                   <Button size="sm" variant="ghost">
@@ -324,70 +389,39 @@ export default function TeamPortfolio() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-400">
-                <img
-                  src="https://play-lh.googleusercontent.com/emWyma9S8bgKJgbKHzLHq-t1r6U6pqX5iAIquxebFAC-ydWOXX0iPgBkG8daDk6Gjko=w240-h480-rw"
-                  alt="ByaheDVO"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <div className="relative aspect-video">
+  <Image
+    src="https://play-lh.googleusercontent.com/emWyma9S8bgKJgbKHzLHq-t1r6U6pqX5iAIquxebFAC-ydWOXX0iPgBkG8daDk6Gjko=w240-h480-rw"
+    alt="ByaheDVO App"
+    fill
+    className="object-cover rounded-t-lg"
+    priority
+  />
+</div>
               <CardHeader>
                 <CardTitle>ByaheDVO</CardTitle>
-                <CardDescription>A rule based chatbot for routes navigation within Davao City utilizing Dialogflow API and Google Maps </CardDescription>
+                <CardDescription>A rule based chatbot for routes navigation within Davao City utilizing Dialogflow API and Google Maps</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge variant="outline">Flutter</Badge>
                   <Badge variant="outline">Firebase</Badge>
+                  
                 </div>
                 <a
-                  href="https://play.google.com/store/apps/details?id=com.byaheDVO_Navigation.byahe_dvo&pli=1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="outline" size="sm">
-                    View Project <ArrowRight className="ml-2 h-3 w-3" />
-                  </Button>
-                </a>
+  href="https://play.google.com/store/apps/details?id=com.byaheDVO_Navigation.byahe_dvo&pli=1"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button variant="outline" size="sm">
+    View Project <ArrowRight className="ml-2 h-3 w-3" />
+  </Button>
+</a>
 
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-green-400 to-teal-400"></div>
-              <CardHeader>
-                <CardTitle>---</CardTitle>
-                <CardDescription>---</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline">Next.js</Badge>
-                  <Badge variant="outline">PostgreSQL</Badge>
-                  <Badge variant="outline">Tailwind</Badge>
-                </div>
-                <Button variant="outline" size="sm">
-                  View Project <ArrowRight className="ml-2 h-3 w-3" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-orange-400 to-red-400"></div>
-              <CardHeader>
-                <CardTitle>---</CardTitle>
-                <CardDescription>---</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline">React</Badge>
-                  <Badge variant="outline">D3.js</Badge>
-                  <Badge variant="outline">Python</Badge>
-                </div>
-                <Button variant="outline" size="sm">
-                  View Project <ArrowRight className="ml-2 h-3 w-3" />
-                </Button>
-              </CardContent>
-            </Card>
+           
           </div>
         </div>
       </section>
@@ -408,7 +442,7 @@ export default function TeamPortfolio() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-purple-600" />
-                  <span className="text-gray-600 dark:text-gray-300">davaodevs@gmail.com</span>
+                  <span className="text-gray-600 dark:text-gray-300">hello@davaodevs.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-purple-600" />
@@ -416,7 +450,7 @@ export default function TeamPortfolio() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-purple-600" />
-                  <span className="text-gray-600 dark:text-gray-300">Davao City, Davao Del Sur, Philippines</span>
+                  <span className="text-gray-600 dark:text-gray-300">San Francisco, CA</span>
                 </div>
               </div>
 
