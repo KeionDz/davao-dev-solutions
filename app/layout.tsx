@@ -7,7 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: "DaDevSolutions",
-  description: "team portfolio"
+  description: "team portfolio",
+  
 }
 
 export default function RootLayout({
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" />
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};

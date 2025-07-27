@@ -326,8 +326,8 @@ export default function TeamPortfolio() {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-400"></div>
               <CardHeader>
-                <CardTitle>E-Commerce Platform</CardTitle>
-                <CardDescription>Modern online store with payment integration</CardDescription>
+                <CardTitle>---</CardTitle>
+                <CardDescription>---</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -344,8 +344,8 @@ export default function TeamPortfolio() {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gradient-to-br from-green-400 to-teal-400"></div>
               <CardHeader>
-                <CardTitle>Task Management App</CardTitle>
-                <CardDescription>Collaborative project management tool</CardDescription>
+                <CardTitle>---</CardTitle>
+                <CardDescription>---</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -362,8 +362,8 @@ export default function TeamPortfolio() {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gradient-to-br from-orange-400 to-red-400"></div>
               <CardHeader>
-                <CardTitle>Analytics Dashboard</CardTitle>
-                <CardDescription>Real-time data visualization platform</CardDescription>
+                <CardTitle>---</CardTitle>
+                <CardDescription>---</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -396,7 +396,7 @@ export default function TeamPortfolio() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-purple-600" />
-                  <span className="text-gray-600 dark:text-gray-300">hello@davaodevs.com</span>
+                  <span className="text-gray-600 dark:text-gray-300">davaodevs@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-purple-600" />
@@ -404,7 +404,7 @@ export default function TeamPortfolio() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-purple-600" />
-                  <span className="text-gray-600 dark:text-gray-300">San Francisco, CA</span>
+                  <span className="text-gray-600 dark:text-gray-300">Davao City, Davao Del Sur, Philippines</span>
                 </div>
               </div>
 
